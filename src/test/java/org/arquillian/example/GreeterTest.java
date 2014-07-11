@@ -21,7 +21,7 @@ public class GreeterTest
     @Deployment
     public static JavaArchive createDeployment()
     {
-        return ShrinkWrap.create(JavaArchive.class).addClass(Greeter.class).addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+        return ShrinkWrap.create(JavaArchive.class).addClasses(Greeter.class, PhraseBuilder.class).addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
     }
 
     @Test
