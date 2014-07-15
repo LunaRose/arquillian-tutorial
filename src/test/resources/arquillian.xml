@@ -5,8 +5,11 @@
         http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
     <container qualifier="jbossas-managed" default="true">
         <configuration>
-            <!--<property name="jbossHome">target/jboss-as-7.1.1.Final</property>-->
-            <property name="jbossHome">c:/jboss-as-7.1.2.Final</property>
+            <property name="jbossHome">target/jboss-as-7.1.1.Final</property>
+            <!--<property name="jbossHome">c:/jboss-as-7.1.2.Final</property>-->
         </configuration>
     </container>
+    <extension qualifier="webdriver">
+        <property name="browser">firefox</property>
+    </extension>
 </arquillian>

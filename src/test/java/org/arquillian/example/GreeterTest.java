@@ -2,8 +2,6 @@ package org.arquillian.example;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Assert;
 import org.junit.Test;
@@ -21,7 +19,7 @@ public class GreeterTest
     @Deployment
     public static JavaArchive createDeployment()
     {
-        return ShrinkWrap.create(JavaArchive.class).addClasses(Greeter.class, PhraseBuilder.class).addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+        return Deployments.createGreeterDeployment();
     }
 
     @Test
